@@ -148,25 +148,25 @@ Terima kasih 🙏
       {/* PUZZLE BACKGROUND */}
       <img
         src="/puzzle.png"
-        className="absolute top-0 left-0 w-56 opacity-60 brightness-125"
+        className="absolute top-0 left-0 w-53 opacity-60 brightness-125"
       />
       <img
         src="/puzzle.png"
-        className="absolute top-0 right-0 w-56 opacity-60 brightness-125"
+        className="absolute top-0 right-0 w-53 opacity-60 brightness-125"
       />
       <img
         src="/puzzle.png"
-        className="absolute bottom-0 left-0 w-56 opacity-60 brightness-125"
+        className="absolute bottom-0 left-0 w-53 opacity-60 brightness-125"
       />
       <img
         src="/puzzle.png"
-        className="absolute bottom-0 right-0 w-56 opacity-60 brightness-125"
+        className="absolute bottom-0 right-0 w-53 opacity-60 brightness-125"
       />
 
       {/* HERO */}
       <section className="text-center py-20 px-6">
         <h2 className="text-4xl font-bold mb-6">Setiap Karya Punya Cerita</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-black-600 max-w-2xl mx-auto">
           ERISHOP adalah platform resmi untuk menampilkan dan menjual karya
           inspiratif dari Erry.
         </p>
@@ -176,7 +176,7 @@ Terima kasih 🙏
       <section id="profil" className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-semibold mb-4">Profil Erry</h3>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-black-600 leading-relaxed">
             Erry adalah seniman berbakat yang mengekspresikan iman, imajinasi,
             dan perjalanan hidup melalui ilustrasi penuh warna dan makna.
             Karyanya membawa pesan harapan dan inspirasi.
@@ -191,19 +191,19 @@ Terima kasih 🙏
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl shadow">
               <h4 className="font-semibold mb-2">Ilustrasi Original</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-black-600">
                 Gambar karakter unik dengan warna ekspresif dan penuh makna.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow">
               <h4 className="font-semibold mb-2">Merchandise Artwork</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-black-600">
                 Kaos, totebag, tumbler, dan notebook desain eksklusif.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow">
               <h4 className="font-semibold mb-2">Custom Design</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-black-600">
                 Pesanan desain khusus untuk event atau komunitas.
               </p>
             </div>
@@ -313,9 +313,9 @@ Terima kasih 🙏
           <h3 className="text-2xl font-semibold mb-6">
             Strategi Jual & Promo Online
           </h3>
-          <ul className="text-gray-600 space-y-3 text-left">
+          <ul className="text-black-600 space-y-3 text-left">
             <li>• Posting rutin di Instagram & TikTok</li>
-            <li>• Gunakan storytelling tentang perjalanan Erry</li>
+            <li>• storytelling tentang perjalanan Erry</li>
             <li>• Buat limited edition</li>
             <li>• Kolaborasi komunitas</li>
             <li>• Giveaway & promo launching</li>
@@ -323,44 +323,45 @@ Terima kasih 🙏
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-gray-300 mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
-          {/* Brand */}
-          <div>
-            <h2 className="text-xl font-bold text-orange-500 mb-3">ERISHOP</h2>
-            <p className="text-sm">
-              ERISHOP adalah platform resmi untuk menampilkan dan menjual karya
-              artwork dari Erry. Setiap produk dibuat dengan konsep seni yang
-              unik dan eksklusif.
-            </p>
-          </div>
+     <footer className="bg-gray-900 text-gray-300 mt-16">
+  <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
 
-          {/* Menu */}
-          <div>
-            <h3 className="font-semibold text-white mb-3">Menu</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#profil" className="hover:text-orange-400">
-                  Profil
-                </a>
-              </li>
-              <li>
-                <a href="#karya" className="hover:text-orange-400">
-                  Karya
-                </a>
-              </li>
-              <li>
-                <a href="#produk" className="hover:text-orange-400">
-                  Produk
-                </a>
-              </li>
-              <li>
-                <a href="#marketing" className="hover:text-orange-400">
-                  Marketing
-                </a>
-              </li>
-            </ul>
-          </div>
+    {/* Brand */}
+    <div>
+      <div className="flex items-center gap-3 mb-3">
+        <img
+          src="/Logo.png"
+          alt="ERISHOP Logo"
+          className="w-10 h-10 object-contain"
+        />
+        <h2 className="text-xl font-bold text-blue-500">ERISHOP</h2>
+      </div>
+
+      <p className="text-sm">
+        ERISHOP adalah platform resmi untuk menampilkan dan menjual karya
+        artwork dari Erry. Setiap produk dibuat dengan konsep seni yang
+        unik dan eksklusif.
+      </p>
+    </div>
+
+    {/* Menu */}
+    <div>
+      <h3 className="font-semibold text-white mb-3">Menu</h3>
+      <ul className="space-y-2 text-sm">
+        <li>
+          <a href="#profil" className="hover:text-orange-400">Profil</a>
+        </li>
+        <li>
+          <a href="#karya" className="hover:text-orange-400">Karya</a>
+        </li>
+        <li>
+          <a href="#produk" className="hover:text-orange-400">Produk</a>
+        </li>
+        <li>
+          <a href="#marketing" className="hover:text-orange-400">Marketing</a>
+        </li>
+      </ul>
+    </div>
 
           {/* Kontak */}
           <div>
@@ -370,6 +371,7 @@ Terima kasih 🙏
             <p className="text-sm">Instagram: @erishop.art</p>
           </div>
         </div>
+        
 
         {/* Copyright */}
         <div className="border-t border-gray-700 text-center py-4 text-sm">
