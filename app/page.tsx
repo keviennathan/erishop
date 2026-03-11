@@ -12,31 +12,83 @@ export default function EriShopWebsite() {
   const products = [
     {
       id: 1,
-      title: "Kaos Art by Erry",
-      desc: "Kaos premium dengan desain ilustrasi original.",
+      title: "Kaos Art Erry 1",
+      desc: "Kaos premium artwork Erry.",
       price: 185000,
-      image: "/kaos.jpg",
+      images: ["/Kaos1.png", "/Kaos1b.png"],
     },
     {
       id: 2,
-      title: "Totebag Japanese Girl",
-      desc: "Totebag eco-friendly dengan artwork eksklusif.",
-      price: 150000,
+      title: "Kaos Art Erry 2",
+      desc: "Kaos premium artwork Erry.",
+      price: 185000,
+      images: ["/Kaos2.png", "/Kaos2b.png"],
     },
     {
       id: 3,
-      title: "Tumbler Artwork",
-      desc: "Tumbler custom dengan desain kreatif Erry.",
-      price: 120000,
+      title: "Kaos Art Erry 3",
+      desc: "Kaos premium artwork Erry.",
+      price: 185000,
+      images: ["/Kaos3.png", "/Kaos3b.png"],
     },
     {
       id: 4,
-      title: "Notebook Art Series",
-      desc: "Notebook cover ilustrasi inspiratif.",
-      price: 95000,
+      title: "Kaos Art Erry 4",
+      desc: "Kaos premium artwork Erry.",
+      price: 185000,
+      images: ["/Kaos4.png", "/Kaos4b.png"],
+    },
+    {
+      id: 5,
+      title: "Kaos Art Erry 5",
+      desc: "Kaos premium artwork Erry.",
+      price: 185000,
+      images: ["/Kaos5.png", "/Kaos5b.png"],
+    },
+    {
+      id: 6,
+      title: "Kaos Art Erry 6",
+      desc: "Kaos premium artwork Erry.",
+      price: 185000,
+      images: ["/Kaos6.png", "/Kaos6b.png"],
+    },
+    // TOTEBAG
+    {
+      id: 7,
+      title: "Totebag Artwork 1",
+      desc: "Totebag eco-friendly desain Erry.",
+      price: 150000,
+      images: ["/Totebag1.png", "/Totebag2.png"],
+    },
+    {
+      id: 8,
+      title: "Totebag Artwork 3",
+      desc: "Totebag eco-friendly desain Erry.",
+      price: 150000,
+      images: ["/Totebag3.png"],
+    },
+    {
+      id: 9,
+      title: "Totebag Artwork 4",
+      desc: "Totebag eco-friendly desain Erry.",
+      price: 150000,
+      images: ["/Totebag4.png"],
+    },
+    {
+      id: 10,
+      title: "Totebag Artwork 5",
+      desc: "Totebag eco-friendly desain Erry.",
+      price: 150000,
+      images: ["/Totebag5.png"],
+    },
+    {
+      id: 11,
+      title: "Totebag Artwork 6",
+      desc: "Totebag eco-friendly desain Erry.",
+      price: 150000,
+      images: ["/Totebag6.png"],
     },
   ];
-
   const addToCart = (product: any) => {
     setCart([...cart, product]);
   };
@@ -92,19 +144,24 @@ Terima kasih 🙏
   const total = cart.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-50 to-white">
-      {/* NAVBAR */}
-      <nav className="bg-white shadow-sm py-4 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-orange-600">ERISHOP</h1>
-          <div className="flex gap-6 text-sm">
-            <a href="#profil">Profil</a>
-            <a href="#karya">Karya</a>
-            <a href="#produk">Produk</a>
-            <a href="#marketing">Marketing</a>
-          </div>
-        </div>
-      </nav>
+    <main className="min-h-screen bg-blue-300 relative overflow-hidden">
+      {/* PUZZLE BACKGROUND */}
+      <img
+        src="/puzzle.png"
+        className="absolute top-0 left-0 w-56 opacity-60 brightness-125"
+      />
+      <img
+        src="/puzzle.png"
+        className="absolute top-0 right-0 w-56 opacity-60 brightness-125"
+      />
+      <img
+        src="/puzzle.png"
+        className="absolute bottom-0 left-0 w-56 opacity-60 brightness-125"
+      />
+      <img
+        src="/puzzle.png"
+        className="absolute bottom-0 right-0 w-56 opacity-60 brightness-125"
+      />
 
       {/* HERO */}
       <section className="text-center py-20 px-6">
@@ -116,7 +173,7 @@ Terima kasih 🙏
       </section>
 
       {/* PROFIL */}
-      <section id="profil" className="bg-white py-16 px-6">
+      <section id="profil" className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-semibold mb-4">Profil Erry</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -155,7 +212,7 @@ Terima kasih 🙏
       </section>
 
       {/* PRODUK */}
-      <section id="produk" className="py-16 px-6 bg-white">
+      <section id="produk" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-semibold text-center mb-8">
             Produk Erry
@@ -173,8 +230,18 @@ Terima kasih 🙏
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-gray-50 p-6 rounded-2xl shadow"
+                className="bg-blue-50 p-6 rounded-2xl shadow"
               >
+                <div className="flex gap-2 mb-4">
+                  {product.images.map((img, index) => (
+                    <img
+                      key={index}
+                      src={img}
+                      className="w-1/2 h-40 object-cover rounded-xl"
+                    />
+                  ))}
+                </div>
+
                 <h4 className="font-semibold mb-2">{product.title}</h4>
 
                 <p className="text-sm text-gray-600 mb-2">{product.desc}</p>
@@ -185,7 +252,7 @@ Terima kasih 🙏
 
                 <button
                   onClick={() => addToCart(product)}
-                  className="w-full bg-orange-500 text-white py-2 rounded-xl"
+                  className="w-full bg-blue-500 text-white py-2 rounded-xl"
                 >
                   Tambah ke Keranjang
                 </button>
@@ -197,7 +264,7 @@ Terima kasih 🙏
 
       {/* CART */}
       {cart.length > 0 && (
-        <section className="bg-orange-100 py-10 px-6">
+        <section className="bg-blue-100 py-10 px-6">
           <div className="max-w-4xl mx-auto">
             <h3 className="font-semibold mb-4 flex items-center gap-2">
               <ShoppingCart size={20} />
@@ -256,9 +323,59 @@ Terima kasih 🙏
         </div>
       </section>
 
-      <footer className="text-center py-6 text-sm text-gray-500">
-        © {new Date().getFullYear()} ERISHOP
+      <footer className="bg-gray-900 text-gray-300 mt-16">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+          {/* Brand */}
+          <div>
+            <h2 className="text-xl font-bold text-orange-500 mb-3">ERISHOP</h2>
+            <p className="text-sm">
+              ERISHOP adalah platform resmi untuk menampilkan dan menjual karya
+              artwork dari Erry. Setiap produk dibuat dengan konsep seni yang
+              unik dan eksklusif.
+            </p>
+          </div>
+
+          {/* Menu */}
+          <div>
+            <h3 className="font-semibold text-white mb-3">Menu</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#profil" className="hover:text-orange-400">
+                  Profil
+                </a>
+              </li>
+              <li>
+                <a href="#karya" className="hover:text-orange-400">
+                  Karya
+                </a>
+              </li>
+              <li>
+                <a href="#produk" className="hover:text-orange-400">
+                  Produk
+                </a>
+              </li>
+              <li>
+                <a href="#marketing" className="hover:text-orange-400">
+                  Marketing
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Kontak */}
+          <div>
+            <h3 className="font-semibold text-white mb-3">Kontak</h3>
+            <p className="text-sm">WhatsApp: +62 812-4627-7770</p>
+            <p className="text-sm">Email: erishop.art@gmail.com</p>
+            <p className="text-sm">Instagram: @erishop.art</p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-700 text-center py-4 text-sm">
+          © {new Date().getFullYear()} ERISHOP — Artwork by Erry
+        </div>
       </footer>
     </main>
   );
-} 
+}
