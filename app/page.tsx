@@ -89,6 +89,33 @@ export default function EriShopWebsite() {
       images: ["/Totebag6.png"],
     },
   ];
+ const [testimonials, setTestimonials] = useState([
+  { name: "Andi Pratama", comment: "Kaosnya keren banget!" },
+  { name: "Sinta Lestari", comment: "Totebagnya bagus dan bahannya tebal." },
+]);
+
+const [name, setName] = useState("");
+const [comment, setComment] = useState("");
+
+// Fungsi tambah testimoni
+const addTestimonial = () => {
+  if (!name || !comment) return; // Jangan tambah kalau kosong
+
+  const newTestimonial = { name, comment };
+
+  setTestimonials([...testimonials, newTestimonial]); // Update state
+  setName(""); // Reset input
+  setComment(""); // Reset textarea
+};
+
+// Fungsi hapus testimoni
+const deleteTestimonial = (index: number) => {
+  const confirmDelete = confirm("Apakah kamu yakin ingin menghapus testimoni ini?");
+  if (!confirmDelete) return;
+
+  const newTestimonials = testimonials.filter((_, i) => i !== index);
+  setTestimonials(newTestimonials);
+};
   const addToCart = (product: any) => {
     setCart([...cart, product]);
   };
@@ -322,46 +349,114 @@ Terima kasih 🙏
           </ul>
         </div>
       </section>
+     {/* TESTIMONI */}
+<section className="max-w-6xl mx-auto px-6 py-16">
 
-     <footer className="bg-gray-900 text-gray-300 mt-16">
-  <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Testimoni Pembeli
+  </h2>
 
-    {/* Brand */}
-    <div>
-      <div className="flex items-center gap-3 mb-3">
-        <img
-          src="/Logo.png"
-          alt="ERISHOP Logo"
-          className="w-10 h-10 object-contain"
-        />
-        <h2 className="text-xl font-bold text-blue-500">ERISHOP</h2>
-      </div>
+  {/* FORM TESTIMONI */}
+  <div className="max-w-md mx-auto mb-10 space-y-3">
+    <input
+      type="text"
+      placeholder="Nama kamu"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      className="w-full border rounded-lg p-2"
+    />
 
-      <p className="text-sm">
-        ERISHOP adalah platform resmi untuk menampilkan dan menjual karya
-        artwork dari Erry. Setiap produk dibuat dengan konsep seni yang
-        unik dan eksklusif.
-      </p>
-    </div>
+    <textarea
+      placeholder="Tulis testimoni..."
+      value={comment}
+      onChange={(e) => setComment(e.target.value)}
+      className="w-full border rounded-lg p-2"
+    />
 
-    {/* Menu */}
-    <div>
-      <h3 className="font-semibold text-white mb-3">Menu</h3>
-      <ul className="space-y-2 text-sm">
-        <li>
-          <a href="#profil" className="hover:text-orange-400">Profil</a>
-        </li>
-        <li>
-          <a href="#karya" className="hover:text-orange-400">Karya</a>
-        </li>
-        <li>
-          <a href="#produk" className="hover:text-orange-400">Produk</a>
-        </li>
-        <li>
-          <a href="#marketing" className="hover:text-orange-400">Marketing</a>
-        </li>
-      </ul>
-    </div>
+    <button
+      onClick={addTestimonial}
+      className="bg-orange-500 text-white px-4 py-2 rounded-lg w-full"
+    >
+      Kirim Testimoni
+    </button>
+  </div>
+
+  {/* LIST TESTIMONI */}
+  <div className="grid md:grid-cols-3 gap-8">
+    {testimonials.map((item, i) => (
+  <div
+    key={i}
+    className="bg-white shadow-lg rounded-xl p-6 text-center relative"
+  >
+    <p className="text-yellow-400 text-lg mb-2">★★★★★</p>
+
+    <p className="text-gray-600 italic mb-4">
+      "{item.comment}"
+    </p>
+
+    <h4 className="font-semibold text-gray-800">
+      {item.name}
+    </h4>
+
+    {/* Tombol hapus */}
+    <button
+      onClick={() => deleteTestimonial(i)}
+      className="absolute top-2 right-2 text-red-500 font-bold"
+    >
+      ✕
+    </button>
+  </div>
+))}
+  </div>
+
+</section>
+
+      <footer className="bg-gray-900 text-gray-300 mt-16">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <img
+                src="/Logo.png"
+                alt="ERISHOP Logo"
+                className="w-10 h-10 object-contain"
+              />
+              <h2 className="text-xl font-bold text-blue-500">ERISHOP</h2>
+            </div>
+
+            <p className="text-sm">
+              ERISHOP adalah platform resmi untuk menampilkan dan menjual karya
+              artwork dari Erry. Setiap produk dibuat dengan konsep seni yang
+              unik dan eksklusif.
+            </p>
+          </div>
+
+          {/* Menu */}
+          <div>
+            <h3 className="font-semibold text-white mb-3">Menu</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#profil" className="hover:text-orange-400">
+                  Profil
+                </a>
+              </li>
+              <li>
+                <a href="#karya" className="hover:text-orange-400">
+                  Karya
+                </a>
+              </li>
+              <li>
+                <a href="#produk" className="hover:text-orange-400">
+                  Produk
+                </a>
+              </li>
+              <li>
+                <a href="#marketing" className="hover:text-orange-400">
+                  Marketing
+                </a>
+              </li>
+            </ul>
+          </div>
 
           {/* Kontak */}
           <div>
@@ -371,7 +466,6 @@ Terima kasih 🙏
             <p className="text-sm">Instagram: @erishop.art</p>
           </div>
         </div>
-        
 
         {/* Copyright */}
         <div className="border-t border-gray-700 text-center py-4 text-sm">
